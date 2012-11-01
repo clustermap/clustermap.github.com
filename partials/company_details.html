@@ -1,0 +1,343 @@
+
+<div class="company-details">
+  <div class="row-fluid">
+    <div class="left company-name">{{name}}</div>
+    <div class="left"> <a>show on map</a></div>
+    <div class="right stats latest-revenue">
+      <div class="top">Latest Revenue</div>
+      <div class="bottom">{{formatMoney last_revenue}}{{#if last_revenue_est}}(estimate){{/if}}</div>
+    </div>
+    <div class="right stats employees">
+      <div class="top">Employees</div>
+      <div class="bottom">{{formatNumber employee_count 0}}   </div>
+    </div>
+    <div class="right stats conections">
+      <div class="top">Connections</div>
+      <div class="bottom">{{formatNumber employee_count 0}}   </div>
+    </div>
+  </div>
+  <div class="row-fluid">   
+    <div class="span9">
+      <div class="row-fluid box summary">
+        <div class="logo"><img height="80" src="{{profile_image_url}}" width="80" class="org-logo"/></div>
+        <div class="badges"><img src="/img/badge_rev.png" style="displaynone;" class="badge_rev"/><img src="/img/badge_emp.png" style="displaynone;" class="badge_emp"/><img src="/img/badge_uni.png" style="displaynone;" class="badge_uni"/></div>
+        <div class="desc">{{description}}</div>
+      </div>
+      <div class="boxes">   
+        <div class="row-fluid">
+          <div class="span6 box funding">
+            <div class="head">Funding</div>
+            <div class="content">
+              <div class="row-fluid underline"><span class="left">TOTAL</span><span class="right"><strong>£36.8M</strong></span></div>
+              <div class="row-fluid underline"><span class="left">Venture Funding Total</span><span class="right"><strong>£36.8M    </strong></span></div>
+              <div class="row-fluid underline"><span class="left">Series A 6/09</span><span class="right"><strong>£13M</strong></span></div>
+              <div class="row-fluid">Good Energies</div>
+              <div class="row-fluid">Index Ventures</div>
+              <div class="row-fluid">Vantage Point Capital</div>
+              <div class="row-fluid">CM Partners</div>
+              <div class="row-fluid">British Gas</div>
+            </div>
+          </div>
+          <div id="revenue_overview" class="span6 box"> 
+            <div class="head">Revenure History</div>
+            <div class="content">
+              <div class="row-fluid key">
+                <div class="left">Avg. Revenue</div>
+                <div class="right">11%</div>
+              </div>
+              <div class="row-fluid">
+                <div class="chart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div id="employees_overview" class="span6 box">
+            <div class="head">Employee History</div>
+            <div class="content">
+              <div class="row-fluid key">
+                <div class="left">Avg. Revenue</div>
+                <div class="right">11%</div>
+              </div>
+              <div class="row-fluid key">
+                <div class="left">Avg. Revenue</div>
+                <div class="right">11%  </div>
+              </div>
+              <div class="row-fluid">
+                <div class="chart"></div>
+              </div>
+            </div>
+          </div>
+          <div id="directors_network" class="span6 box">
+            <div class="head">Directors Shared Network</div>
+            <div class="content">
+              <div class="row-fluid underline">
+                <div class="egonet">
+                  <div class="chart"></div>
+                </div>
+              </div>
+              <div class="row-fluid">
+                <div class="map-key"> 
+                  <div class="label">Map key      </div>
+                  <div class="thin-line"></div>
+                  <div class="arrow">></div>
+                  <div class="thick-line"></div>
+                  <div class="text">thicker lines mean more directors  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span6 box">
+            <div class="head">Company Founders</div>
+            <div class="content">
+              <div class="row-fluid underline">ARM LTD founderd 1990</div>
+              <div class="row-fluid underline">Robin Saxby</div>
+              <div class="row-fluid underline">Jamie</div>
+            </div>
+          </div>
+          <div class="span6 box">
+            <div class="head">Network Membership &amp; University Links</div>
+            <div class="content">
+              <div class="row-fluid underline">ARM LTD founderd 1990</div>
+              <div class="row-fluid underline">Robin Saxby</div>
+              <div class="row-fluid underline">Jamie</div>
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div id="twitter_networks" class="span6 box">
+            <div class="head form-inline"> <span>Twitter Mention Network</span>
+              <div class="btn-group pull-right">
+                <button data-toggle="dropdown" class="btn btn-mini dropdown-toggle">Mini button <span class="caret"></span>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a><a href="#">Action</a><a href="#">Action</a><a href="#">Action</a></li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+            <div class="content">
+              <div class="egonet">
+                <div class="chart"></div>
+              </div>
+            </div>
+          </div>
+          <div class="span6 box">
+            <div class="head">Tweets</div>
+            <div class="content">
+              <div class="row-fluid underline">ARM LTD founderd 1990</div>
+              <div class="row-fluid underline">Robin Saxby</div>
+              <div class="row-fluid underline">Jamie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span3">
+      <div class="box padding5">
+        <div class="left">Add, edit, update </div>
+        <div class="btn btn-success btn-mini right">Update details</div>
+      </div>
+      <div class="box details">
+        <div class="head-arrow">Details</div>
+        <div class="content">
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-address.png"/></div>
+            <div class="c2">{{address}} {{postcode}}</div>
+          </div>
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-twitter.png"/></div>
+            <div class="c2"><a href="http//twitter.com/{{screen_name}}" target="_blank">@{{screen_name}}</a></div>
+          </div>
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-www.png"/></div>
+            <div class="c2"><a href="{{web_url}}" target="_blank">{{web_url}}</a></div>
+          </div>
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-sector.png"/></div>
+            <div class="c2">
+              {{#filtered tags "tags" "type" "sector"}}
+              {{#each tags}}<a href="#/{{type}}/{{tag}}">{{description}}</a>{{/each}}
+              {{/filtered}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box linkedin">
+        <div class="head-arrow">Your connections</div>
+        <div class="content">
+          <div class="row-fluid">ARM LTD founderd 1990</div>
+          <div class="row-fluid">Robin Saxby</div>
+          <div class="row-fluid">Jamie</div>
+        </div>
+      </div>
+      <div class="box directors">
+        <div class="head-arrow">Directors</div>
+        <div class="content">{{#each directors}}
+          <div class="row-fluid">
+            <div class="t">
+              <div class="c1"><img src="/images/icon-org-details-employees.png"/></div>
+              <div class="c2">{{director_name}}</div>
+            </div>
+            <div class="t">
+              <div class="c1"></div>
+              <div class="c2">({{formatDate appointment_date}}-{{formatDate resignation_date "present"}})</div>
+            </div>
+          </div>{{/each}}
+        </div>
+      </div>
+      <div class="box padding5">
+        <div class="left"> 
+          <div class="duedil">duedil</div>
+        </div>
+        <div class="btn btn-warning btn-mini right">View on Duedil</div>
+      </div>
+      <div class="box data-sources">
+        <div class="head-arrow">Data Sources</div>
+        <div class="content">
+          <div class="row-fluid">ARM LTD founderd 1990</div>
+          <div class="row-fluid">Robin Saxby</div>
+          <div class="row-fluid">Jamie</div>
+        </div>
+      </div>
+      <div id="revenue_overview" class="box">
+        <h1>Revenue</h1>
+        <div class="chart"></div>
+      </div>
+      <div id="employees_overview" class="box">
+        <h1>Employees</h1>
+        <div class="chart"></div>
+      </div>
+      <div id="directors_network" class="box">
+        <h1 class="header">Directors Shared Network</h1>
+        <div class="egonet">
+          <div class="chart"></div>
+        </div>
+      </div>
+      <div id="twitter_networks" class="box">
+        <h1>Twitter Mention Network   </h1>
+        <div class="btn-group">
+          <button data-toggle="dropdown" class="btn btn-mini dropdown-toggle">Mini button <span class="caret"></span>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a><a href="#">Action</a><a href="#">Action</a><a href="#">Action</a></li>
+            </ul>
+          </button>
+        </div>
+        <div class="egonet">
+          <div class="chart"></div>
+        </div>
+      </div>
+      <div class="founders-details box">
+        <div class="header">Founders</div>
+        <div class="header-arr"><img src="/images/elem-org-details-tab-arr-down.png"/></div>
+        <div class="body">{{#each founders}}
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-employees.png"/></div>
+            <div class="c2">{{name}}</div>
+          </div>{{/each}}
+        </div>
+      </div>
+      <div class="spinouts-details box">
+        <div class="header">University links</div>
+        <div class="header-arr"><img src="/images/elem-org-details-tab-arr-down.png"/></div>
+        <div class="body">{{#filtered tags "tags" "type" "cudeptorigin"}}
+          <div class="t"><b>Department of Origin</b></div>{{#each tags}}
+          <div class="t">
+            <div class="c1"></div>
+            <div class="c2"><a href="#/{{type}}/{{tag}}">{{description}}</a></div>
+          </div>{{/each}}
+          {{/filtered}}
+          {{#filtered tags "tags" "type" "cuequity"}}
+          <div class="t"><b>CU Equity Holdings</b></div>{{#each tags}}
+          <div class="t">
+            <div class="c1"></div>
+            <div class="c2"><a href="#/{{type}}/{{tag}}">{{description}}</a></div>
+          </div>{{/each}}
+          {{/filtered}}
+        </div>
+      </div>
+      <div class="others-details box">
+        <div class="header">Data Sources</div>
+        <div class="header-arr"><img src="/images/elem-org-details-tab-arr-down.png"/></div>
+        <div class="body">{{#tagsOfType tags "view"}}
+          <div class="t">
+            <div class="c1"></div>
+            <div class="c2"><a href="#/{{type}}/{{tag}}">{{description}}</a></div>
+          </div>{{/tagsOfType}}
+          {{#filtered tags "tags" "type" "badge"}}
+          {{#filtered tags "tags" "tag" "camenterprise"}}
+          {{#each tags}}
+          <div class="t">
+            <div class="c1"></div>
+            <div class="c2"><a href="#/{{type}}/{{tag}}">{{description}}</a></div>
+          </div>{{/each}}
+          {{/filtered}}
+          {{/filtered}}
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="update-company box">
+        <div class="c"><span>Update</span><a class="button-green">Update details</a></div>
+      </div>
+      <div class="contact-details box">
+        <div class="header">Details</div>
+        <div class="header-arr"><img src="/images/elem-org-details-tab-arr-down.png"/></div>
+        <div class="body">
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-address.png"/></div>
+            <div class="c2">{{address}} {{postcode}}</div>
+          </div>
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-twitter.png"/></div>
+            <div class="c2"><a href="http//twitter.com/{{screen_name}}" target="_blank">@{{screen_name}}</a></div>
+          </div>
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-www.png"/></div>
+            <div class="c2"><a href="{{web_url}}" target="_blank">{{web_url}}</a></div>
+          </div>
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-sector.png"/></div>
+            <div class="c2">
+              {{#filtered tags "tags" "type" "sector"}}
+              {{#each tags}}<a href="#/{{type}}/{{tag}}">{{description}}</a>{{/each}}
+              {{/filtered}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box source-link">
+        <div class="c"><a href="{{source_url}}" target="_blank"></a></div>
+      </div>
+      <div class="linkedin-details box">
+        <div class="header">Your Connections</div>
+        <div class="header-arr"><img src="/images/elem-org-details-tab-arr-down.png"/></div>
+        <div class="body">{{#each linkedin-contact}}
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-employees.png"/></div>
+            <div class="c2">{{director_name}}</div>
+          </div>
+          <div class="t">
+            <div class="c1"></div>
+            <div class="c2">({{formatDate appointment_date}}-{{formatDate resignation_date "present"}})</div>
+          </div>{{/each}}
+        </div>
+      </div>
+      <div class="directors-details box">
+        <div class="header">Directors</div>
+        <div class="header-arr"><img src="/images/elem-org-details-tab-arr-down.png"/></div>
+        <div class="body">{{#each directors}}
+          <div class="t">
+            <div class="c1"><img src="/images/icon-org-details-employees.png"/></div>
+            <div class="c2">{{director_name}}</div>
+          </div>
+          <div class="t">
+            <div class="c1"></div>
+            <div class="c2">({{formatDate appointment_date}}-{{formatDate resignation_date "present"}})</div>
+          </div>{{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

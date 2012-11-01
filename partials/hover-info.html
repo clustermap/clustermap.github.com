@@ -1,0 +1,66 @@
+
+<div class="template">
+  {{#if org}}
+  <table>
+    <tr>
+      <td>
+        <div class="twitter-logo-bg">
+          <img src="{{sector_icon org}}" height="16" width="16"/>
+        </div>
+      </td>
+      <td>
+        <a class="name" href="/company/{{org.id}}">{{org.name}}</a>
+      </td>
+      <td>
+        {{#if org.degree}}
+        <a class="show-egonet-button app-company-focus" href="" data-org-id="{{org.id}}">
+          <img src="images/show-egonet-button.png" height="20" width="22"/>
+        </a>
+        {{/if}}
+      </td>
+    </tr>
+    {{#if org.last_tweet}}
+    <tr>
+      <td>
+        <div class="twitter-ico"></div>
+      </td>
+      <td colspan="2">
+        <div class="tweet">{{org.last_tweet.text}}</div>
+      </td>
+    </tr>
+    {{/if}}
+  </table>
+  {{#if orgs}}
+  <div class="spacer"></div>
+  {{/if}}
+
+  {{/if}}
+
+  {{#if orgs}}
+  <table class="group_orgs">
+    {{#groups orgs "
+    <td>
+      <table class='column'>" "</table>
+    </td>
+    " 5}}
+    <tr>
+      <td>
+        <div class="twitter-logo-bg">
+          <img src="{{sector_icon this}}" height="16" width="16"/>
+        </div>
+      </td>
+      <td>
+        <a class="name" href="/company/{{id}}">{{name}}</a>
+      </td>
+      <td>
+        {{#if degree}}
+        <a class="show-egonet-button app-company-focus" href="" data-org-id="{{id}}">
+          <img src="images/show-egonet-button.png" height="20" width="22"/>
+        </a>
+        {{/if}}
+      </td>
+    </tr>
+    {{/groups}}
+  </table>
+  {{/if}}
+</div>
