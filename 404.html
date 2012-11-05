@@ -47,25 +47,25 @@
   <body class="map-view">
     <div class="sticky-wrapper">   
       <div class="sticky-header">
-        <div class="top container-fluid"><img src="/img/header/logo.png" class="logo">
-          <div class="metrics-box">
+        <div class="top container-fluid stats"><img src="/img/header/logo.png" class="logo">
+          <div class="stat orgs metrics-box">
             <div class="caption">Total Companies</div>
-            <div class="value">1420  </div>
+            <div data-bind="text: total_count()" class="value">  </div>
           </div>
-          <div class="metrics-box">
-            <div class="caption">Total Companies</div>
-            <div class="value">1420  </div>
+          <div class="stat emp metrics-box">
+            <div class="caption">Total Employing</div>
+            <div data-bind="text: total_employees()" class="value">  </div>
           </div>
-          <div class="metrics-box">
-            <div class="caption">Total Companies</div>
-            <div class="value">1420  </div>
+          <div class="stat rev metrics-box">
+            <div class="caption">Total Revenue</div>
+            <div data-bind="text: total_revenue()" class="value">  </div>
           </div>
           <div class="right">
             <div class="row">
               <ul class="breadcrumb">
-                <li><a href="#">Add company</a><span class="divider">|</span></li>
-                <li><a href="#">Add company</a><span class="divider">|</span></li>
-                <li><a href="#">Add company    </a></li>
+                <li><a href="/#">Add company</a><span class="divider">|</span></li>
+                <li><a href="/about">About</a><span class="divider">|</span></li>
+                <li><a href="/#">Contact us</a></li>
               </ul>
             </div>
             <div class="row"><a href="http://twitter.com/camclustermap" target="_blank" class="right follow-twitter"></a></div>
@@ -73,30 +73,74 @@
         </div>
         <div class="bottom container-fluid">
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#">Datasets</a></li>
-            <li><a href="#">Map</a></li>
-            <li><a href="#">Directory    </a></li>
-            <li>
-              <button type="button" class="btn btn-small">LinkedIn</button>
+            <li class="active">
+              <div class="btn-group"><a data-toggle="dropdown" href="#" class="btn dropdown-toggle">Datasets<span class="caret"></span></a>
+                <ul class="dropdown-menu">                 
+                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/businessweekly' }">Business Weekly Killer companies</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/billiondollar' }">Billion dollar companies</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/top50rev' }">50 fastest-growing companies by revenue</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/top50emp' }">50 fastest-growing companies by employees</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/camenterprise' }">Spin-outs from Cambridge University</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/view/camcomputerlab' }">Founded by Cambridge University Computer Lab alumni</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/EEV' }">Sector: Energy and Cleantech</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/HLS' }">Sector: Life Science and Healthcare</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/ICT' }">Sector: Information Technology and Telecoms</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/EPS' }">Sector: Physical Science and Engineering</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/NAM' }">Sector: Nanotech and Advanced Materials</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/OTH' }">Sector: Other</a></li>
+                  <li> <a data-bind="attr: { href: '/'+view() }">All companies</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a data-bind="attr: { href: '/map/'+path_rest() }">Map</a></li>
+            <li><a data-bind="attr: { href: '/list/'+path_rest() }">Directory    </a></li>
+            <li> 
+              <button type="button" class="btn"> <i class="icon-linkedin"></i>Sign in</button>
             </li>
             <li class="right">
               <div class="input-prepend"><span class="add-on"> <i class="icon-search"></i></span>
-                <input type="text" placeholder="Search for companies …">
+                <input type="text" placeholder="Search for companies …" class="search">
               </div>
             </li>
-            <li class="right"><a href="#">Rotate map views         </a></li>
+            <li class="right"><a href="#">Rotate map views     </a></li>
           </ul>
+        </div>
+        <div class="container-fluid">
+          <div class="showing-bar emboss">
+            <div data-bind="text: showing_message()" class="showing">Showing: All companies</div>
+            <div class="stats">             
+              <div class="stat orgs">
+                <div class="h">Companies</div>
+                <div data-bind="text: org_displaying_count()" class="n"> </div>
+              </div>
+              <div class="stat emp">
+                <div class="h">Employing</div>
+                <div data-bind="text: org_displaying_employees()" class="n">                  </div>
+              </div>
+              <div class="stat rev">
+                <div class="h">Total revenue  </div>
+                <div data-bind="text: org_displaying_revenue()" class="n"> </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="sticky-content container-fluid">
         <div id="loading_view" class="view"></div>
         <div id="map_view" class="view">
-          <div id="map_canvas"></div>
+          <div class="content-margins">                           
+            <div id="map_canvas"></div>
+          </div>
         </div>
         <div id="directory_view" class="view">
           <div class="red_box">  </div>
         </div>
         <div id="company_view" class="view">  </div>
+        <div id="list_view" class="view">
+          <div class="content-margins">
+            <table cellpadding="0" cellspacing="0" border="0" class="directory table table-striped display"></table>
+          </div>
+        </div>
       </div>
       <div class="sticky-footer">
         <div class="footer container-fluid">
