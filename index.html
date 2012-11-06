@@ -76,26 +76,26 @@
             <li class="active">
               <div class="btn-group"><a data-toggle="dropdown" href="#" class="btn dropdown-toggle">Datasets<span class="caret"></span></a>
                 <ul class="dropdown-menu">                 
-                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/businessweekly' }">Business Weekly Killer companies</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/billiondollar' }">Billion dollar companies</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/top50rev' }">50 fastest-growing companies by revenue</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/top50emp' }">50 fastest-growing companies by employees</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/badge/camenterprise' }">Spin-outs from Cambridge University</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/view/camcomputerlab' }">Founded by Cambridge University Computer Lab alumni</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/EEV' }">Sector: Energy and Cleantech</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/HLS' }">Sector: Life Science and Healthcare</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/ICT' }">Sector: Information Technology and Telecoms</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/EPS' }">Sector: Physical Science and Engineering</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/NAM' }">Sector: Nanotech and Advanced Materials</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view()+'/sector/OTH' }">Sector: Other</a></li>
-                  <li> <a data-bind="attr: { href: '/'+view() }">All companies</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/badge/businessweekly' }">Business Weekly Killer companies</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/badge/billiondollar' }">Billion dollar companies</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/badge/top50rev' }">50 fastest-growing companies by revenue</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/badge/top50emp' }">50 fastest-growing companies by employees</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/badge/camenterprise' }">Spin-outs from Cambridge University</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/view/camcomputerlab' }">Founded by Cambridge University Computer Lab alumni</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/sector/EEV' }">Sector: Energy and Cleantech</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/sector/HLS' }">Sector: Life Science and Healthcare</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/sector/ICT' }">Sector: Information Technology and Telecoms</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/sector/EPS' }">Sector: Physical Science and Engineering</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/sector/NAM' }">Sector: Nanotech and Advanced Materials</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links()+'/sector/OTH' }">Sector: Other</a></li>
+                  <li> <a data-bind="attr: { href: '/'+links() }">All companies</a></li>
                 </ul>
               </div>
             </li>
-            <li><a data-bind="attr: { href: '/map/'+path_rest() }">Map</a></li>
-            <li><a data-bind="attr: { href: '/list/'+path_rest() }">Directory    </a></li>
-            <li> 
-              <button type="button" class="btn"> <i class="icon-linkedin"></i>Sign in</button>
+            <li><a data-bind="attr: { href: '/map'+path_rest_links() }">Map</a></li>
+            <li><a data-bind="attr: { href: '/list'+path_rest_links() }">Directory    </a></li>
+            <li>
+              <button type="button" data-bind="css: linkedin_state" class="linkedin btn"><i class="icon-linkedin-color"></i><span data-bind="text: linkedin_button_text">linkedin ...</span></button>
             </li>
             <li class="right">
               <div class="input-prepend"><span class="add-on"> <i class="icon-search"></i></span>

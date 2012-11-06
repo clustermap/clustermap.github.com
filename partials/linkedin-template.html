@@ -1,15 +1,27 @@
-<div class="header">Your Connections</div>
-  <div class="header-arr"><img src="/images/elem-org-details-tab-arr-down.png"/></div>
-  <div class="body">
+
+  
+
     {{#each this}}
+
     <div class="t">
-      <div class="c1"><img src="/images/icon-org-details-employees.png"/></div>
-      <div class="c2">{{headline}}</div>
-    </div>
-    <div class="t">
-      <div class="c1"></div>
-      <div class="c2">{{firstName}} {{lastName}}</div>
+      {{#if pictureUrl}}
+      <div class="c1"><img src="{{pictureUrl}}" height="24" width="24"/></div>
+      {{else}}
+      <div class="c1"><img src="/img/default_ln_profile_sm.png" height="24" width="24"/></div>
+      {{/if}}
+      <div class="c4">
+        <div class="c2">
+
+          <a target="_blank" href="{{publicProfileUrl}}">{{firstName}} {{lastName}}</a>
+          
+          
+          {{#if first}}
+            <span class="badge badge-linkedin">1st</span>
+          {{else}}
+            <span class="badge badge-linkedin">2nd</span>
+          {{/if}}
+        </div>
+        <div class="c3">{{headline}}</div>
+      </div>
     </div>
     {{/each}}
-  </div>
-</div>  
