@@ -1,27 +1,9 @@
-
-  
-
-    {{#each this}}
-
-    <div class="t">
-      {{#if pictureUrl}}
-      <div class="c1"><img src="{{pictureUrl}}" height="24" width="24"/></div>
-      {{else}}
-      <div class="c1"><img src="/img/default_ln_profile_sm.png" height="24" width="24"/></div>
-      {{/if}}
-      <div class="c4">
-        <div class="c2">
-
-          <a target="_blank" href="{{publicProfileUrl}}">{{firstName}} {{lastName}}</a>
-          
-          
-          {{#if first}}
-            <span class="badge badge-linkedin">1st</span>
-          {{else}}
-            <span class="badge badge-linkedin">2nd</span>
-          {{/if}}
-        </div>
-        <div class="c3">{{headline}}</div>
-      </div>
-    </div>
-    {{/each}}
+{{#each this}}
+<div class="t">{{#if pictureUrl}}
+  <div class="c1"><img height="24" src="{{pictureUrl}}" width="24"/></div>{{else}}
+  <div class="c1"><img height="24" src="/img/default_ln_profile_sm.png" width="24"/></div>{{/if}}
+  <div class="c4">
+    <div class="c2"><a href="{{publicProfileUrl}}" target="_blank">{{firstName}} {{lastName}}</a>{{#if first}}<span class="badge badge-linkedin">1st</span>{{else}}<span class="badge badge-linkedin">2nd</span>{{/if}}</div>
+    <div class="c3">{{headline}}</div>
+  </div>
+</div>{{/each}}
